@@ -1,0 +1,96 @@
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while(1+1==2)
+            {
+
+            
+            Console.WriteLine("D si es decimal y b si es binario ");
+            string letra = (Console.ReadLine());
+               
+            if (letra == "D")
+            {
+                Console.WriteLine("INGRESE EL DECIMAL ");
+                int numero = Convert.ToInt32(Console.ReadLine());
+                if (numero > 0)
+                {
+                    
+                    String cadena = "";
+                    while (numero > 0)
+                    {
+                        if (numero % 2 == 0)
+                        {
+                            cadena = "0" + cadena;
+                        }
+                        else
+                        {
+                            cadena = "1" + cadena;
+                        }
+                        numero = (int)(numero / 2);
+                    }
+                        Console.WriteLine("El numero es:");
+
+                        Console.WriteLine(cadena);
+                }
+                else
+                {
+                    if (numero == 0)
+                    {
+                        Console.WriteLine("0");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No ingrese numeros negativos");
+                    }
+                }
+
+            }
+            else
+            {
+                if (letra == "b")
+                {
+                    
+
+                    int n = 0;
+                    string bin = "";
+                    bool v = true;
+                    Console.WriteLine("Escriba un numero binario: ");
+                    bin = Console.ReadLine();
+                    for (int x = bin.Length - 1, y = 0; x >= 0; x--, y++)
+                    {
+                        if (bin[x] == '0' || bin[x] == '1')
+                        {
+                            n += (int)(int.Parse(bin[x].ToString()) * Math.Pow(2, y));
+                        }
+                        else
+                        {
+                            v = false;
+
+                        }
+                    }
+                    if (v == false)
+                    {
+                        Console.WriteLine("'" + bin + "' No es binario");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Decimal: {0}", n);
+                    }
+                }
+            }
+            
+
+            Console.ReadLine();
+
+        }
+            }
+
+        }
+
+}
+
+
